@@ -13,7 +13,7 @@ const cookieParser = require('cookie-parser');
 const crypto = require('crypto');
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // Middleware
 app.use(express.urlencoded({ extended: true }));
@@ -1310,7 +1310,7 @@ app.listen(PORT, () => {
   console.log('='.repeat(60));
   console.log('ZeroThreat Test App — Single Tab Session Demo');
   console.log('='.repeat(60));
-  console.log(`Server running on http://localhost:${PORT}`);
+  console.log(`Server running on port ${PORT}`);
   console.log('');
   console.log('⚠️  WARNING: This is a DEMO application for testing only!');
   console.log('   Do not use this pattern in production without proper');
